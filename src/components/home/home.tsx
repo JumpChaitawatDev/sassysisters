@@ -9,7 +9,7 @@ function usehome(props: UsehomeProps) {
 
 type homeViewProps = ReturnTypeUsehome & {};
 let HomeView: React.FC<homeViewProps> = ({}) => {
-  return <>homeView</>;
+  return <>homeView 2</>;
 };
 
 type homeProps = UsehomeProps & Omit<homeViewProps, keyof ReturnTypeUsehome>;
