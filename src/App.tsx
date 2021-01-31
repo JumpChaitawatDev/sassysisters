@@ -1,17 +1,33 @@
 import React from "react";
 import "./App.css";
 import initializeFirebase from "./firebase/init";
-import { Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 
-import Home from "./components/home/home";
+import Home from "./components/home/views/home";
+import Dashboard from "./components/dashboard/views/dashboard";
+import Orders from "./components/orders/views/orders";
+import Products from "./components/products/views/products";
+import Nav from "./layouts/views/nav";
+import Container from "./layouts/views/container";
 
 function App() {
   initializeFirebase();
+
   return (
-    <div className="App container">
-      <Switch>
-        <Route exact path="/" component={Home} />
-      </Switch>
+    <div>
+      <Router>
+        <div>
+          <Nav />
+          <Switch>
+            <Container>
+              <Route exact path="/" component={Home} />
+              <Route path="/dashboard" component={Dashboard} />
+              <Route path="/orders" component={Orders} />
+              <Route path="/products" component={Products} />
+            </Container>
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 }

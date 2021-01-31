@@ -1,23 +1,35 @@
 import { createMuiTheme } from "@material-ui/core/styles";
-import { orange } from "@material-ui/core/colors";
-
+import { grey, purple, deepPurple } from "@material-ui/core/colors";
 declare module "@material-ui/core/styles/createMuiTheme" {
-  interface Theme {
-    status: {
-      danger: string;
-    };
-  }
-  // allow configuration using `createMuiTheme`
-  interface ThemeOptions {
-    status?: {
-      danger?: string;
-    };
-  }
+  interface Theme {}
+  interface ThemeOptions {}
 }
 
 const theme = createMuiTheme({
-  status: {
-    danger: orange[500],
+  palette: {
+    primary: {
+      main: deepPurple[300],
+      contrastText: "#fff",
+      dark: "#68518f",
+      light: "#aa90d7",
+    },
+    secondary: {
+      main: "#ADCD75",
+      contrastText: "#fff",
+      dark: "#798f51",
+      light: "#bdd790",
+    },
+    text: {
+      primary: "#546e7a",
+    },
+  },
+
+  overrides: {
+    MuiPaper: {
+      elevation1: {
+        boxShadow: "0px 10px 20px #0000002b",
+      },
+    },
   },
 });
 

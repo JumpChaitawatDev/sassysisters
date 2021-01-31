@@ -4,7 +4,7 @@ import "./index.css";
 import App from "./App";
 import { ThemeProvider } from "@material-ui/core/styles";
 import theme from "./theme";
-import { BrowserRouter } from "react-router-dom";
+import { RecoilRoot } from "recoil";
 
 const SassysistersApp = () => {
   return (
@@ -16,9 +16,9 @@ const SassysistersApp = () => {
 
 ReactDOM.render(
   <React.StrictMode>
-    <BrowserRouter>
+    <RecoilRoot>
       <SassysistersApp />
-    </BrowserRouter>
+    </RecoilRoot>
   </React.StrictMode>,
   document.getElementById("root")
 );
